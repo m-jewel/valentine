@@ -1,43 +1,54 @@
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-  position: relative;
 }
 
-button {
-  margin: 0 10px; /* Add space between buttons */
+.text-side {
+  flex: 1;
+  text-align: center;
+}
+
+.gif-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.YES, .NO {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .YES {
-  padding: 10px;
-  border: none;
-  cursor: pointer;
   background-color: #EFC3CA;
 }
 
 .NO {
-  padding: 10px;
-  border: none;
-  cursor: pointer;
   background-color: #dfd4d6;
 }
 
-.OMG, .NYOO {
-  display: none;
+.yesDance {
   position: absolute;
-  top: 100%; /* Adjust as needed */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure it's above other elements */
 }
 
-.YES:hover + .OMG {
-  display: block;
-}
-
-.NO:hover + .NYOO {
-  display: block;
+/* Update the .gif-side to allow for middle alignment of the dance GIF */
+.gif-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 img {
