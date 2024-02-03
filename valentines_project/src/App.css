@@ -1,38 +1,46 @@
-#root {
+.container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 
-img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+button {
+  margin: 0 10px; /* Add space between buttons */
 }
-
 
 .YES {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
   background-color: #EFC3CA;
-  margin-right: 200px;
 }
 
-.OMG {
+.NO {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #dfd4d6;
+}
+
+.OMG, .NYOO {
   display: none;
+  position: absolute;
+  top: 100%; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .YES:hover + .OMG {
   display: block;
 }
 
-.NO {
-  background-color: #dfd4d6;
-}
-
-.NYOO {
-  display: none;
-}
-
 .NO:hover + .NYOO {
   display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
