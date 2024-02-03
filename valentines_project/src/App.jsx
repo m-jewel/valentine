@@ -11,6 +11,8 @@ function App() {
     const [yesBtnSize, setYesBtnSize] = useState(1);
     const [showYesDance, setShowYesDance] = useState(false);
     const [hoverGif, setHoverGif] = useState('');
+    const [showGiphy, setShowGiphy] = useState(false);
+    const [showCrying, setShowCrying] = useState(false);
 
     function handleYesClick() {
         setShowYesDance(true);
@@ -25,19 +27,20 @@ function App() {
     }
 
     function handleYesHover() {
-        if (!showYesDance) { // Only show hover GIF if the yesDance GIF is not being shown
-            setHoverGif('giphy');
+        if (!showYesDance) {
+            setShowGiphy(true);
         }
     }
 
     function handleNoHover() {
         if (!showYesDance) {
-            setHoverGif('crying');
+            setShowCrying(true);
         }
     }
 
     function handleMouseLeave() {
-        setHoverGif(''); // Hide hover GIFs when not hovering
+        setShowGiphy(false);
+        setShowCrying(false);
     }
 
     function getPhrase() {
@@ -48,27 +51,32 @@ function App() {
         <div className="container">
             <div className="text-side">
                 <h1>Will you be my pookie for valentines?</h1>
-                <button
-                    className="YES"
-                    onMouseEnter={handleYesHover}
-                    onMouseLeave={handleMouseLeave}
-                    onClick={handleYesClick}
-                    style={{
-                        transform: `scale(${yesBtnSize})`
-                    }}>Yes</button>
-                <button
-                    className="NO"
-                    onMouseEnter={handleNoHover}
-                    onMouseLeave={handleMouseLeave}
-                    onClick={handleNoClick}>No</button>
+                <div className="button-container">
+                    <button
+                        className="YES"
+                        onMouseEnter={handleYesHover}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleYesClick}
+                        style={{
+                            transform: `scale(${yesBtnSize})`
+                        }}>
+                        Yes
+                    </button>
+                    <button
+                        className="NO"
+                        onMouseEnter={handleNoHover}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleNoClick}>
+                        No
+                    </button>
+                </div>
                 <div className="phrase-container">{phrase}</div>
             </div>
             <div className="gif-side">
-                {hoverGif === 'giphy' && <div className='OMG'><img src={giphy} alt="Giphy animation"/></div>}
-                {hoverGif === 'crying' && <div className='NYOO'><img src={crying} alt="Crying animation"/></div>}
-                {showYesDance && <div className='yesDance'><img src={yesDance} alt="Yes Dance animation"/></div>}
+                {showGiphy && <img src={giphy} alt="Giphy animation"/>}
+                {showCrying && <img src={crying} alt="Crying animation"/>}
+                {showYesDance && <img src={yesDance} alt="Yes Dance animation"/>}
             </div>
-
         </div>
     );
 }
