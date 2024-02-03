@@ -1,57 +1,61 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .text-side {
-  flex: 1;
-  text-align: center;
+    flex: 1;
+    text-align: center;
 }
 
 .gif-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.YES, .NO {
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  cursor: pointer;
+.NO,
+.YES {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .YES {
-  background-color: #EFC3CA;
+    background-color: #EFC3CA;
 }
 
 .NO {
-  background-color: #dfd4d6;
+    background-color: #dfd4d6;
 }
 
 .yesDance {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10; /* Ensure it's above other elements */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
-/* Update the .gif-side to allow for middle alignment of the dance GIF */
 .gif-side {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.phrase-container {
+    margin-top: 230px;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
